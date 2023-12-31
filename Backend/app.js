@@ -21,6 +21,9 @@ app.use(cors())
 
 app.use("/auth",Auth)
 app.use("/api",Admin)
+app.get("/",(req,res)=>{
+    res.send("working")
+})
 app.listen(port,()=>{
     console.log(`server is working on http://localhost:${port}`);
 })
