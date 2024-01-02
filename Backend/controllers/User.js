@@ -38,7 +38,7 @@ const GetAllUser = async (req, res) => {
   }
 };
 // get single user
-const GetSingleUser = async (req, res) => {
+const GetSingleUser =  async(req, res) => {
   try {
     const userdata = await User.findById(req.params.id);
     if (!userdata) {

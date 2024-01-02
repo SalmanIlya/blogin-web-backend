@@ -3,12 +3,14 @@ const bodyparser=require("body-parser")
 const cors=require("cors")
 const db = require("./db/db")
 const uploadfile=require("express-fileupload")
+const morgan = require("morgan")
 
 const app=express()
 app.use(bodyparser.json()) 
 app.use(bodyparser.urlencoded({ extended: false }))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+app.use(morgan("common"))
 app.use(uploadfile({
     useTempFiles:true
 }))
